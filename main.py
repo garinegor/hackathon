@@ -15,11 +15,11 @@ while True:
         camera.start_preview()
         print("getting photo")
         sleep(2)
+        camera.stop_preview()
         if 'came(new)' in os.listdir():
             camera.capture('./came(new)/image.jpg')
         else:
             camera.capture('./came/image.jpg')
-        camera.stop_preview()
-        os.rename('came','came(new)')
+            os.rename('came','came(new)')
         print('folder has been renamed')
         sleep(0.2)
