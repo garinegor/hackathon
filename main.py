@@ -13,8 +13,10 @@ while True:
     input_state = GPIO.input(21)
     if input_state == False:
         camera.start_preview()
+	print("getting photo")
         sleep(2)
         camera.capture('./came/image.jpg')
         camera.stop_preview()
         os.rename('came','came(new)')
+	print('folder has been renamed')
         sleep(0.2)
